@@ -81,17 +81,14 @@ export const PushVsPullWagonProblem: React.FC = () => {
                                 The vertical component of the push, <Formula inline>P_y = P \sin\theta</Formula>, acts **downward**, adding to the weight. To keep the wagon from falling through the floor, the normal force must increase.<br/>
                                 <Formula inline>ΣF_y = N_push - W - P_y = 0</Formula><br/>
                                 <Formula inline>N_push = W + P \sin\theta</Formula><br/>
-                                {/* FIX: Removed curly braces `{f,push}` which caused a parsing error. The content is now a valid string. */}
                                 Friction is: <Formula inline>F_f,push = μ(W + P \sin\theta)</Formula></li>
                                 <li><strong>Case 2: PULLING</strong><br/>
                                 The vertical component of the pull, <Formula inline>P_y = P \sin\theta</Formula>, acts **upward**, partially lifting the wagon. The ground doesn't need to push up as hard.<br/>
                                 <Formula inline>ΣF_y = N_pull - W + P_y = 0</Formula><br/>
                                 <Formula inline>N_pull = W - P \sin\theta</Formula><br/>
-                                {/* FIX: Removed curly braces `{f,pull}` which caused a parsing error. The content is now a valid string. */}
                                 Friction is: <Formula inline>F_f,pull = μ(W - P \sin\theta)</Formula></li>
                             </ol>
-                            {/* FIX: Removed curly braces from `{f,push}` and `{f,pull}` to prevent them from being parsed as invalid JSX expressions. */}
-                            <p className="font-bold text-lg text-green-400">Conclusion: Since <Formula inline>(W + P \sin\theta) > (W - P \sin\theta)</Formula>, it is proven that <Formula inline>F_f,push > F_f,pull</Formula>. Pushing increases the normal force, which increases friction. Pulling reduces it.</p>
+                            <p className="font-bold text-lg text-green-400">Conclusion: Since <Formula inline>(W + P \sin\theta)</Formula> {'>'} <Formula inline>(W - P \sin\theta)</Formula>, it is proven that <Formula inline>F_f,push</Formula> {'>'} <Formula inline>F_f,pull</Formula>. Pushing increases the normal force, which increases friction. Pulling reduces it.</p>
                         </div>
                     </div>
                 )}
